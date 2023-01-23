@@ -1,0 +1,26 @@
+
+installments from loan_mst.dbf
+
+ADVGS-S: housing
+
+ADVFST-S : festival
+
+ADVMED-S : medical
+
+ADVMRG-S :  other
+
+
+CCINST-S :   advance interest
+
+
+LNHYP-S  :   vehicle
+
+REHSG-S  :  housing
+
+LASOBL  :   bank interest
+
+LNOTH-S  :    other
+
+
+
+

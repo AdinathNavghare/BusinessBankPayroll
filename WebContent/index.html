@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+    
+    
+    
+    
+    
+    
+    
+        <meta charset="utf-8" />
+        <title>NAMCO</title>
+        <link href="css/layout.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+        .info
+        {
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            position: absolute;
+            display: block;
+            color: White;
+            font-family: Arial;
+            font-size: 16px;
+			
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        }
+    </style>
+	<style type="text/css">
+    
+      div.item { width:150px; height:147px;  text-align:center; padding-top:25px; color: white; z-index:1000; }
+             
+      div#item_4 { position: absolute; top: 390px; left: 17%; z-index:1000; }                  
+    </style>
+    <link rel="stylesheet" href="css/jquery.tooltip.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tooltip.js"></script>
+    <script type="text/javascript">
+      $j = jQuery.noConflict();
+      $j(document).ready(function(){
+        $j("div.item").tooltip();
+      });
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </script>
+    </head>
+    <body>
+	
+	
+    <script type="text/javascript">
+        $(function () {
+            //debugger;
+            var info = $("#info");
+            if (info.length == 0) {
+                info = $("<span />").addClass("info");
+                $("body").append(info);
+            }
+            info.hide();
+            $(".hover_text").bind("mouseenter", function () {
+                var p = GetScreenCordinates(this);
+                info.html(this.alt);
+                info.show();
+                info.css("width", $(this).width());
+                info.css({ "left": p.x, "top": p.y + this.offsetHeight - info[0].offsetHeight });
+            });
+            $(".hover_text").bind("mouseleave", function () {
+                info.hide();
+            });
+        });
+        function GetScreenCordinates(obj) {
+            var p = {};
+            p.x = obj.offsetLeft;
+            p.y = obj.offsetTop;
+            while (obj.offsetParent) {
+                p.x = p.x + obj.offsetParent.offsetLeft;
+                p.y = p.y + obj.offsetParent.offsetTop;
+                if (obj == document.getElementsByTagName("body")[0]) {
+                    break;
+                }
+                else {
+                    obj = obj.offsetParent;
+                }
+            }
+            return p;
+        }
+    </script>
+	
+	 
+      
+		
+	<img src="images/Building construction.png" height="300px" width="400px" style="margin-left:100px; margin-top:300px; position:absolute; left:60%; z-index:1000;"> 
+    <div class="container" >
+	
+	        
+              <img src="images/home.png" style="margin-top:3px; float:left; "></img><b style="text-align:center; font-family:almendra; font-size: 38px;">Harsh Constructions</b>   Private Ltd.
+               <div class="innercontainer"> 
+		          <center>
+				  <a href="login.jsp" title="Payroll for Harsh Construction" >
+	                <img src="images/product1.jpg" class="payroll, hover_text" alt="See your Payroll here" style="border:1px solid #cacaca; margin-right: 10px;"></a><a href="assets.html" title="Assets for Harsh Construction"><img src="images/product2.jpg" class="assets, hover_text" alt="Construction Assets Administration" style="border:1px solid #cacaca;">
+				  </a>
+                 </center>
+	  </div>
+				<img src="images/assetmachin.png" height="300px" width="400px" style=" margin-top:150px; position:absolute; left:15%; z-index:1000;"></img>
+				
+				</div>
+		<div id="item_4" class="item">
+        
+        <div class="tooltip_description" style="display:none" title="Harsh Construction">
+          This is a place where we are having some information of your company with short description of what you can do with the help of this software.......
+        </div>
+      </div>
+    </body>
+</html>
